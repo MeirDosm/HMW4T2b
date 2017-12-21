@@ -1,0 +1,351 @@
+#include <iostream>
+#include <stdio.h>
+#include <math.h>
+using namespace std;
+
+/* run this program using the console pauser or add your own getch, system("pause") or input loop */
+
+int main(int argc, char** argv) {
+	
+	start:
+		cout << "Vvedite nomer zadaniya (s 1 po 11): ";
+		int n=0;
+		cin >> n;
+		
+		if (n==1)
+		{
+			int A=0;
+	        int B=0;
+	        int i;
+	        int count = 0;
+	        cout << "Vvedite celye chisla A i B, prichem A<B: " << endl;
+	        cin >> A;
+	        cin >> B;
+	
+	        for (i=B-1;i>A;i--)
+	        {
+		        cout << "Chisla mezhdu B i A (ne vklyuchaya chisla A i B) v poryadke ih ubyvaniya: " << i << endl;
+		        count++;
+	        }
+	        cout << "Kolichestvo chisel mezhdu A i B (ne vklyuchaya chisla A i B ravno: " << count << endl;
+	
+	        
+	        goto start;
+		}
+		
+		else if (n==2)
+		{
+			int N=0;
+	        float A=0;
+	        float B=0;
+	        float Fa=0;
+	        float Fb=0;
+	
+	        cout << "Vvedite celoe chislo N>2: " << endl;
+	        cin >> N;
+	        cout << "Vvedite veshestvennye chisla A i B, prichem B>A: " << endl;
+	
+	        cin >> A;
+	        cin >> B;
+	
+	        if ((B-A)>3*N)
+	        {
+		        Fa=(1-sin(A+N));
+		        Fb=(1-sin(A+(2*N)));
+		        cout << "Znachenie funkcii v tochke (A+N) ravno: " << Fa << endl;
+	            cout << "Znachenie funkcii v tochke (A+2*N) ravno: " << Fb << endl;
+	
+	        }
+	        else
+	        {
+		        cout << "My ne mozhem naiti funkcii v takih tochkah. " << endl;
+	        }
+	
+	        
+	        goto start;
+		}
+		
+		else if (n==3)
+		{
+			int i;
+	        int n;
+	        float D;
+	
+	        float a[20];
+	
+        	a[1]=1;
+        	a[2]=2;
+	
+	        cout << "Vvedite chislo D>0: " << endl;
+	        cin >> D;
+	
+	        cout << "Vvedite chislo n < 20: " << endl;
+	        cin >> n;
+	
+	        for (i=3;i<=n;i++)
+	        {
+		        a[i]=((a[i-2]+a[i-1])/2);
+	        }
+	
+	
+	
+		
+	        for (i=2;i<n;i++)
+	        {
+		        if ((fabs(a[i]-a[i-1]))<D)
+		        {
+			        cout << i << " " << a[i] << " " << a[i-1] << endl;
+			        break;
+		        }
+		
+	        }
+	
+	        
+	        goto start;
+		}
+		
+		else if(n==4)
+		{
+			int i;
+	        int N=0;
+	
+	        cout << "Vvedite chislo N>15: " << endl;
+	        cin >> N;
+	
+	        for (i=10;i<=N;i++)
+	        {
+		        if ((i%2!=0)&&(i%5==0))
+		        {
+			        cout << "Chisla ot 10 do " << N << " nechetnye i kratnye 5: " << i << endl;
+		        }
+		        
+				
+	        }
+	        
+	        goto start;
+		}
+		
+		else if (n==5)
+		{
+			int A=0;
+	        int i;
+	
+	        for (i=11;i<=99;i++)
+	        {
+		        A=pow(i,2);
+		        cout << "Kvadrat chisla " << i << ": " << A << endl;
+	        }
+	        
+	        goto start;
+		}
+		
+		else if (n==6)
+		{
+			int i;
+	        int n;
+	        int count=0;
+	        int a[19];
+	
+	        cout << "Vvedite chislo n < 20: " << endl;
+	        cin >> n;
+	        cout << "Vvedite posledovatel'nost' iz " << n << " veshestvennyh chisel, nachinayushaya s otricatel'nogo chisla: " << endl;
+	
+	
+	        for (i=0;i<n;i++)
+	        {
+		
+		        cin >> a[i];
+	        }
+	
+	 
+	        
+	 
+	        for (i=0;i<6;i++)
+	        {
+	            if(a[i]<0)
+	            {
+	 	            count++;
+	            }
+	            
+	
+            }
+    
+            cout << "Kolichestvo otricatel'nyh chisel zapisannyh v nachale posledovatel'nosti ( naprimer do 6 chlena posledovatel'nosti): " << count << endl;
+            
+            goto start;
+		}
+		
+		else if (n==7)
+		{
+			int i,j;
+	        int n;	
+	        int count=0;
+	        int a[19];
+	
+	        cout << "Vvedite chislo n < 20: " << endl;
+	        cin >> n;
+	        cout << "Vvedite posledovatel'nost' iz " << n << " celyh chisel, v nachale kotoroi est' neskol'ko ravnyh mezhdu soboi elementov'': " << endl;
+	
+	        for (i=0;i<n;i++)
+	        {
+		
+	         	cin >> a[i];
+	        }
+	
+	        for (i=0;i<n;i++)
+	        {
+		        for (j=0;j<n;j++)
+		        {
+			        if ((i!=j)&&(i<j)&&(a[i]==a[j]))
+			        {
+			            count++;					
+			        }
+		        }
+		
+	        }
+	
+	        cout << "Kolichestvo ravnyh mezhdu soboi elementov v dannoj posledovatel'nosti ravno: " << count << endl;
+	
+	        goto start;
+		}
+		
+		else if (n==8)
+		{
+			int i;		
+	        int a[20];
+	        int count = 0;
+	
+	 
+	        for (i=0;i<=19;i++)
+	        {
+	 	        cout << "Vvedite ocenku po informatike " << i << " ucheniku (izvestno chto ne vse ucheniki imeyut 5) : ";
+		        cin >> a[i];
+	        }
+	 
+	        for (i=0;i<=19;i++)
+	        {
+	            if(a[i]==5)
+	            {
+	 	            count++;
+	            }
+	    
+	
+            }
+    
+            cout << "Kolichestvo uchenikov imeyushih ocenku 5 po informatike: " << count << endl;
+            
+            goto start;
+		}
+		
+		else if (n==9)
+		{
+			int i;		
+	        int a[20];
+	        int count = 0;
+	
+	 
+	        for (i=0;i<=19;i++)
+	        {
+	 	        cout << "Vvedite ocenku po informatike " << i << " ucheniku (dopuskaetsya chto vse ucheniki mogut imet' 5) : ";
+		        cin >> a[i];
+	        }
+	 
+	        for (i=0;i<=19;i++)
+	        {
+	            if(a[i]==5)
+	            {
+	 	            count++;
+	            }
+	    
+	
+            }
+    
+            if (count==20)
+            {
+    	        cout << "Vse ucheniki imeyut 5 po informatike. " << endl;
+	        }
+            else
+            {
+	
+                cout << "Kolichestvo uchenikov imeyushih ocenku 5 po informatike: " << count << endl;
+            }
+            
+            goto start;
+		}
+		
+		else if (n==10)
+		{
+			int i;		
+	        int a[32];
+	        int count = 0;
+	
+	 
+	        for (i=1;i<=31;i++)
+	        {
+	 	        cout << "Vypadali li osadki v " << i << " den' maya (izvestno chto v 1 den' maya osadki ne vypadali i izvestno chto v kakie-to dni maya osadki vypadali), esli net pishem 1, esli da pishem 0 : ";
+		        cin >> a[i];
+	        }
+	 
+	        for (i=1;i<=31;i++)
+	        {
+	            if(a[i]==1)
+	            {
+	 	            count++;
+	            }
+	            else
+	            {
+	    	        break;
+		        }
+	
+            }
+    
+            cout << "Kolichestvo nepreryvnyh dnei maya kogda osadki ne vypadali, nachinaya s 1 maya, ravno: " << count << endl;
+            
+            goto start;
+		}
+		
+		else if (n==11)
+		{
+			int i;		
+	        int a[32];
+	        int count = 0;
+	
+	 
+	        for (i=1;i<=31;i++)
+	        {
+	        	cout << "Vypadali li osadki v " << i << " den' maya (izvestno chto v 1 den' maya osadki ne vypadali i dopuskaetsya chto osadkov moglo ne byt' ni v kakoi den' maya), esli net pishem 1, esli da pishem 0 : ";
+		        cin >> a[i];
+	        }
+	 
+	        for (i=1;i<=31;i++)
+           	{
+	            if(a[i]==1)
+	            {
+	 	            count++;
+	            }
+	            else
+	            {
+	             	break;
+		        }
+	
+            }
+            
+            if (count==31)
+            {
+    	        cout << "Osadkov ne bylo ni v kakoi den' maya. " << endl;
+	        }
+            else
+            {
+	
+                cout << "Kolichestvo nepreryvnyh dnei maya kogda osadki ne vypadali, nachinaya s 1 maya, ravno: " << count << endl;
+            }
+    
+            goto start;
+		}
+		
+		else
+		{
+			cout << "Udachi!";
+		}
+	return 0;
+}
